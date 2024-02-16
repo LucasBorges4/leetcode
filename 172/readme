@@ -1,0 +1,35 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+A intuição por trás deste problema é que os zeros à direita em n! são determinados pelo número de fatores 5 presentes em n!.
+
+# Approach
+<!-- Describe your approach to solving the problem. -->
+A abordagem é iterar sobre os números de 1 a n e contar quantos fatores 5 cada número possui em sua decomposição em fatores primos. Isso nos dará o número total de zeros à direita em n!.
+
+# Complexity
+Complexidade de tempo: O(log n)
+Complexidade de espaço: O(1)
+
+A complexidade de tempo é O(log n) porque estamos dividindo repetidamente n por 5 até que n seja menor que 5. A complexidade de espaço é O(1) porque estamos usando apenas uma variável extra (c) independentemente do tamanho de n.
+
+# Code
+```
+//Algoritmo de arquimedes
+int trailingZeroes2(int n) {
+    int count = 0;
+    
+    // Itera enquanto n for maior que 0
+    while (n > 0) {
+        // Divide n por 5 e adiciona o resultado ao contador
+        count += n / 5;
+        // Atualiza n para o próximo valor em que 5 é um fator
+        n /= 5;
+    }
+    
+    return count;
+}
+
+```
+
+Este código implementa a solução descrita acima. Ele retorna o número de zeros à direita em n! ao iterar por n e contar o número de fatores 5 presentes em cada número.
+

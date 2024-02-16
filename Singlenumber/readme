@@ -1,0 +1,24 @@
+# Intuition
+<!-- Describe your first thoughts on how to solve this problem. -->
+A ideia aqui é usar a propriedade do operador XOR para encontrar o número único em um array. O operador XOR retorna 1 apenas se os bits em suas entradas forem diferentes, caso contrário, retorna 0. Portanto, ao realizar a operação XOR em todos os elementos do array, os números que aparecem duas vezes se cancelam mutuamente, deixando apenas o número único.
+# Approach
+<!-- Describe your approach to solving the problem. -->
+A abordagem é iterar através do array e aplicar a operação XOR a cada elemento. Isso acumula o valor final que representa o número único no array.
+# Complexity
+- Time complexity: O(n)
+<!-- Add your time complexity here, e.g. $$O(n)$$ -->
+A complexidade de tempo é O(n) porque precisamos iterar através de todos os elementos do array uma vez para encontrar o número único. 
+- Space complexity: O(1)
+<!-- Add your space complexity here, e.g. $$O(n)$$ -->
+A complexidade de espaço é O(1) porque estamos usando apenas uma variável extra, independentemente do tamanho do array.
+
+# Code
+```
+int singleNumber(int* nums, int numsSize) {
+    int resultado = 0;
+    for (size_t i = 0; i < numsSize; i++){
+        resultado ^= nums[i];
+    }
+    return resultado;
+}
+```
